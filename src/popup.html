@@ -3,8 +3,27 @@
 <head>
   <meta charset="UTF-8">
   <title>Claude UI Slimmer</title>
+  <link rel="stylesheet" href="popup.css">
 </head>
 <body>
-  <p>設定UIはPhase 4で実装予定</p>
+  <h1>Claude UI Slimmer</h1>
+
+  <div class="control">
+    <label for="attachmentSize">
+      添付ファイルサイズ: <span id="attachmentSizeValue">120</span>px
+    </label>
+    <input type="range" id="attachmentSize" min="40" max="120" step="5" value="120">
+  </div>
+
+  <div class="control">
+    <label for="inputMaxHeight">
+      入力欄の最大高さ: <span id="inputMaxHeightValue">200</span>px
+    </label>
+    <input type="range" id="inputMaxHeight" min="80" max="458" step="10" value="200">
+  </div>
+
+  <p class="hint">claude.aiのタブを開いた状態でスライダーを動かしてください</p>
+
+  <script src="popup.js"></script>
 </body>
 </html>

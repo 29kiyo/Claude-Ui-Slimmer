@@ -4,7 +4,7 @@
 ~/vscode_clone/Claude-Ui-Slimmer
 
 ## 現在のフェーズ
-Phase 3: 入力欄自動拡張の抑制(完了)/ Phase 4着手待ち
+Phase 4: ポップアップUI実装(完了)/ Phase 5着手待ち
 
 ## 完了済み
 - GitHubリポジトリ作成・clone
@@ -18,8 +18,8 @@ Phase 3: 入力欄自動拡張の抑制(完了)/ Phase 4着手待ち
 - icons/ に仮アイコン配置
 - chrome://extensionsで読み込み・動作確認
 - 添付ファイルサムネイルのDOM構造調査、--cus-attachment-sizeによる縮小ルール追加(動作確認済み)
-- 入力欄のDOM構造調査(contenteditable="true"の.ProseMirrorとその親div)
-- content.cssに --cus-input-max-height による入力欄高さ制限ルールを追加
+- 入力欄のDOM構造調査、--cus-input-max-heightによる高さ制限ルール追加(動作確認済み)
+- popup.html/css/js本実装、スライダー操作でcontent.jsへリアルタイム送信(動作確認予定)
 
 ## 次にやること
-- Phase 4: popup.html/css/jsの本実装、--cus-attachment-sizeと--cus-input-max-heightをスライダー等で操作できるUI作成
+- Phase 5: chrome.storage.syncへの値の永続化、ポップアップ起動時に保存値を読み込んでUIに反映
