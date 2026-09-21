@@ -1,5 +1,5 @@
 body {
-  width: 260px;
+  width: 280px;
   padding: 12px 16px;
   font-family: system-ui, sans-serif;
   font-size: 13px;
@@ -19,12 +19,46 @@ h1 {
   margin-bottom: 4px;
 }
 
-.control input[type="range"] {
+.control-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.control-row input[type="range"] {
+  flex: 1;
+  min-width: 0;
+}
+
+.number-input {
+  width: 52px;
+  padding: 2px 4px;
+  font-size: 13px;
+  box-sizing: border-box;
+}
+
+.unit {
+  color: #666;
+  font-size: 12px;
+}
+
+#resetBtn {
   width: 100%;
+  padding: 6px 0;
+  margin-top: 4px;
+  cursor: pointer;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  background: #f5f5f5;
+  font-size: 13px;
+}
+
+#resetBtn:hover {
+  background: #e8e8e8;
 }
 
 .hint {
   font-size: 11px;
   color: #666;
-  margin-top: 8px;
+  margin-top: 10px;
 }

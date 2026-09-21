@@ -4,7 +4,7 @@
 ~/vscode_clone/Claude-Ui-Slimmer
 
 ## 現在のフェーズ
-Phase 4: ポップアップUI実装(完了)/ Phase 5着手待ち
+Phase 4: ポップアップUI実装(完了・追加改修済み)/ Phase 5着手待ち
 
 ## 完了済み
 - GitHubリポジトリ作成・clone
@@ -19,7 +19,8 @@ Phase 4: ポップアップUI実装(完了)/ Phase 5着手待ち
 - chrome://extensionsで読み込み・動作確認
 - 添付ファイルサムネイルのDOM構造調査、--cus-attachment-sizeによる縮小ルール追加(動作確認済み)
 - 入力欄のDOM構造調査、--cus-input-max-heightによる高さ制限ルール追加(動作確認済み)
-- popup.html/css/js本実装、スライダー操作でcontent.jsへリアルタイム送信(動作確認予定)
+- popup.html/css/js本実装、スライダー操作でcontent.jsへリアルタイム送信(動作確認済み)
+- popupに数値直接入力欄とリセットボタンを追加(動作確認予定)
 
 ## 次にやること
 - Phase 5: chrome.storage.syncへの値の永続化、ポップアップ起動時に保存値を読み込んでUIに反映
