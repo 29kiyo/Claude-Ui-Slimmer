@@ -4,7 +4,7 @@
 ~/vscode_clone/Claude-Ui-Slimmer
 
 ## 現在のフェーズ
-Phase 5: 設定の永続化とリアルタイム反映(完了・不具合修正済み)/ Phase 6着手待ち
+Phase 6: Edge動作確認・README整備(完了)/ Phase 7着手待ち
 
 ## 完了済み
 - GitHubリポジトリ作成・clone
@@ -20,8 +20,10 @@ Phase 5: 設定の永続化とリアルタイム反映(完了・不具合修正�
 - 添付ファイルサムネイルのDOM構造調査、--cus-attachment-sizeによる縮小ルール追加(動作確認済み)
 - 入力欄のDOM構造調査、--cus-input-max-heightによる高さ制限ルール追加(動作確認済み)
 - popup.html/css/js本実装、数値直接入力欄・リセットボタン追加(動作確認済み)
-- 設定の永続化とリアルタイム反映を実装
-- 不具合修正: chrome.storage.syncは書き込み回数制限に引っかかりリロードしないと反映されない問題があったため、chrome.storage.localに変更(動作確認予定)
+- chrome.storage.localによる設定の永続化とリアルタイム反映(動作確認済み)
+- edge://extensionsでの動作確認
+- README.md作成(インストール方法・使い方・GitHub Actionsでのリリース手順)
+- build.shは廃止し、.github/workflows/build.ymlに変更(workflow_dispatchでタグ入力→manifest.jsonのversion書き換え→zip作成→GitHub Release自動作成。artifactは作成しない)
 
 ## 次にやること
-- Phase 6: Edgeでの動作確認、README整備、実行コマンド表示on/off設定の実装
+- Phase 7: Chrome/Edge両方での全機能通しテスト、docs最終更新、git push(build.ymlの動作確認はpush後にActionsタブから可能)
