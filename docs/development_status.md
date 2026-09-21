@@ -4,7 +4,7 @@
 ~/vscode_clone/Claude-Ui-Slimmer
 
 ## 現在のフェーズ
-Phase 1: 拡張機能の土台(完了)/ Phase 2着手待ち
+Phase 2: 添付ファイルサムネイル縮小(完了)/ Phase 3着手待ち
 
 ## 完了済み
 - GitHubリポジトリ作成・clone
@@ -17,6 +17,8 @@ Phase 1: 拡張機能の土台(完了)/ Phase 2着手待ち
 - src/content.js, src/content.css, src/popup.html(仮)作成
 - icons/ に仮アイコン配置
 - chrome://extensionsで読み込み・動作確認
+- claude.aiの添付ファイルサムネイルのDOM構造を調査(data-cds="MessageAttachments"配下のgroup/tile要素が実サイズを決定)
+- content.cssに --cus-attachment-size によるサムネイル縮小ルールを追加
 
 ## 次にやること
-- Phase 2: claude.aiの添付ファイルサムネイルのDOM構造調査、content.cssにサイズ縮小ルール追加
+- Phase 3: 入力欄(textarea/contenteditable)のDOM構造調査、自動拡張抑制ルールの追加

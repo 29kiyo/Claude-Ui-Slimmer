@@ -1,0 +1,9 @@
+/* ===== Phase 2: 添付ファイルサムネイル縮小 ===== */
+:root {
+  --cus-attachment-size: 120px; /* デフォルト値(元のサイズ) */
+}
+
+[data-cds="MessageAttachments"] [class*="group/tile"] {
+  width: var(--cus-attachment-size) !important;
+  height: var(--cus-attachment-size) !important;
+}
