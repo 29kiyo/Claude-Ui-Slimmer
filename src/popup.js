@@ -18,7 +18,7 @@ function setupControl(sliderId, numberId, storageKey, min, max) {
     slider.value = v;
     number.value = v;
     if (save) {
-      chrome.storage.sync.set({ [storageKey]: v });
+      chrome.storage.local.set({ [storageKey]: v });
     }
   }
 
@@ -40,7 +40,7 @@ const inputHeightControl = setupControl(
 );
 
 // ポップアップを開いたタイミングで、保存済みの値をUIに反映(このときは保存し直さない)
-chrome.storage.sync.get(DEFAULTS, (values) => {
+chrome.storage.local.get(DEFAULTS, (values) => {
   attachmentControl.apply(values.attachmentSize, { save: false });
   inputHeightControl.apply(values.inputMaxHeight, { save: false });
 });

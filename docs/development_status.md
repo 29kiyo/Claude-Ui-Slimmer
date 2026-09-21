@@ -4,7 +4,7 @@
 ~/vscode_clone/Claude-Ui-Slimmer
 
 ## 現在のフェーズ
-Phase 5: 設定の永続化とリアルタイム反映(完了)/ Phase 6着手待ち
+Phase 5: 設定の永続化とリアルタイム反映(完了・不具合修正済み)/ Phase 6着手待ち
 
 ## 完了済み
 - GitHubリポジトリ作成・clone
@@ -20,7 +20,8 @@ Phase 5: 設定の永続化とリアルタイム反映(完了)/ Phase 6着手待
 - 添付ファイルサムネイルのDOM構造調査、--cus-attachment-sizeによる縮小ルール追加(動作確認済み)
 - 入力欄のDOM構造調査、--cus-input-max-heightによる高さ制限ルール追加(動作確認済み)
 - popup.html/css/js本実装、数値直接入力欄・リセットボタン追加(動作確認済み)
-- chrome.storage.syncによる設定の永続化、storage.onChangedによるリアルタイム反映に方式変更(tabs.sendMessageは廃止、動作確認予定)
+- 設定の永続化とリアルタイム反映を実装
+- 不具合修正: chrome.storage.syncは書き込み回数制限に引っかかりリロードしないと反映されない問題があったため、chrome.storage.localに変更(動作確認予定)
 
 ## 次にやること
 - Phase 6: Edgeでの動作確認、README整備、実行コマンド表示on/off設定の実装
