@@ -28,8 +28,6 @@ claude.ai (Web版) の以下2つの不満を解消するChrome/Edge拡張機能�
 
 ## 開発者向け
 
-開発時のセットアップ、フェーズごとの設計は `docs/`(リポジトリには含まれません)を参照してください。
-
 配布用パッケージの作成は GitHub Actions で行います。GitHubの「Actions」タブ →
 「Build and Release」ワークフロー → 「Run workflow」から、リリースしたいタグ
 (例: `v1.0.0`)を入力して実行すると、そのタグでGitHub Releaseが自動作成され、
