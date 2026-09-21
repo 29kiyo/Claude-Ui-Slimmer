@@ -1,0 +1,10 @@
+{
+  "terminal.integrated.defaultProfile.windows": "Git Bash",
+  "terminal.integrated.profiles.windows": {
+    "Git Bash": {
+      "source": "Git Bash"
+    }
+  },
+  "editor.formatOnSave": true,
+  "files.eol": "\n"
+}
