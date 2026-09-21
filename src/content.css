@@ -7,3 +7,13 @@
   width: var(--cus-attachment-size) !important;
   height: var(--cus-attachment-size) !important;
 }
+
+/* ===== Phase 3: 入力欄自動拡張の抑制 ===== */
+:root {
+  --cus-input-max-height: 200px; /* デフォルト:サイトの元の値(~458px)より小さめに制限 */
+}
+
+div:has(> .ProseMirror[contenteditable="true"]) {
+  max-height: var(--cus-input-max-height) !important;
+  overflow-y: auto !important;
+}

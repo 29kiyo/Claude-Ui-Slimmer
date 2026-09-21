@@ -4,7 +4,7 @@
 ~/vscode_clone/Claude-Ui-Slimmer
 
 ## 現在のフェーズ
-Phase 2: 添付ファイルサムネイル縮小(完了)/ Phase 3着手待ち
+Phase 3: 入力欄自動拡張の抑制(完了)/ Phase 4着手待ち
 
 ## 完了済み
 - GitHubリポジトリ作成・clone
@@ -17,8 +17,9 @@ Phase 2: 添付ファイルサムネイル縮小(完了)/ Phase 3着手待ち
 - src/content.js, src/content.css, src/popup.html(仮)作成
 - icons/ に仮アイコン配置
 - chrome://extensionsで読み込み・動作確認
-- claude.aiの添付ファイルサムネイルのDOM構造を調査(data-cds="MessageAttachments"配下のgroup/tile要素が実サイズを決定)
-- content.cssに --cus-attachment-size によるサムネイル縮小ルールを追加
+- 添付ファイルサムネイルのDOM構造調査、--cus-attachment-sizeによる縮小ルール追加(動作確認済み)
+- 入力欄のDOM構造調査(contenteditable="true"の.ProseMirrorとその親div)
+- content.cssに --cus-input-max-height による入力欄高さ制限ルールを追加
 
 ## 次にやること
-- Phase 3: 入力欄(textarea/contenteditable)のDOM構造調査、自動拡張抑制ルールの追加
+- Phase 4: popup.html/css/jsの本実装、--cus-attachment-sizeと--cus-input-max-heightをスライダー等で操作できるUI作成
