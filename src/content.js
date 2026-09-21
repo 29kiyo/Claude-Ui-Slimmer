@@ -1,19 +1,39 @@
 console.log("[Claude UI Slimmer] content script loaded");
 
-chrome.runtime.onMessage.addListener((message) => {
-  if (!message || !message.type) return;
+const DEFAULTS = {
+  attachmentSize: 120,
+  inputMaxHeight: 200,
+};
 
-  if (message.type === "CUS_UPDATE_ATTACHMENT_SIZE") {
+function applySettings(values) {
+  if (values.attachmentSize !== undefined) {
     document.documentElement.style.setProperty(
       "--cus-attachment-size",
-      `${message.value}px`
+      `${values.attachmentSize}px`
     );
   }
-
-  if (message.type === "CUS_UPDATE_INPUT_MAX_HEIGHT") {
+  if (values.inputMaxHeight !== undefined) {
     document.documentElement.style.setProperty(
       "--cus-input-max-height",
-      `${message.value}px`
+      `${values.inputMaxHeight}px`
     );
+  }
+}
+
+// ページ読み込み時、保存済みの設定(なければデフォルト)を反映
+chrome.storage.sync.get(DEFAULTS, (values) => {
+  applySettings(values);
+});
+
+// popupなど他コンテキストからの変更をリアルタイムに反映
+chrome.storage.onChanged.addListener((changes, areaName) => {
+  if (areaName !== "sync") return;
+
+  const updates = {};
+  if (changes.attachmentSize) updates.attachmentSize = changes.attachmentSize.newValue;
+  if (changes.inputMaxHeight) updates.inputMaxHeight = changes.inputMaxHeight.newValue;
+
+  if (Object.keys(updates).length > 0) {
+    applySettings(updates);
   }
 });
