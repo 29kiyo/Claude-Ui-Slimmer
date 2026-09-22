@@ -11,8 +11,9 @@
 }
 
 /* 貼り付けたテキスト等、button要素にインラインstyleでサイズ指定されるケース */
-/* :first-of-type で本体のサムネイルbuttonのみを対象にし、削除ボタン(2つ目のbutton)を除外 */
-[data-cds="MessageAttachments"] [data-testid="file-thumbnail"] > button:first-of-type {
+/* class に group/thumbnail を含む場合のみ対象(group/tile=通常ファイルとは構造が違うため区別) */
+/* :not([data-cds-attachment-remove]) で削除ボタンを二重に除外 */
+[data-cds="MessageAttachments"] [data-testid="file-thumbnail"][class*="group/thumbnail"] > button:first-of-type:not([data-cds-attachment-remove]) {
   width: var(--cus-attachment-size) !important;
   height: var(--cus-attachment-size) !important;
   min-width: var(--cus-attachment-size) !important;
