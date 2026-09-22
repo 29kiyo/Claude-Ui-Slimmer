@@ -31,4 +31,5 @@ claude.ai (Web版) の以下2つの不満を解消するChrome/Edge拡張機能�
 配布用パッケージの作成は GitHub Actions で行います。GitHubの「Actions」タブ →
 「Build and Release」ワークフロー → 「Run workflow」から、リリースしたいタグ
 (例: `v1.0.0`)を入力して実行すると、そのタグでGitHub Releaseが自動作成され、
-`manifest.json`のversionをそのタグに合わせたzipが添付されます。
+`manifest.json`のversionがそのタグに合わせて自動更新され、`main`ブランチにコミットされたうえで、
+同バージョンのzipがReleaseに添付されます。
