@@ -3,9 +3,18 @@
   --cus-attachment-size: 120px; /* デフォルト値(元のサイズ) */
 }
 
-[data-cds="MessageAttachments"] [class*="group/tile"] {
+/* 画像・ファイル添付(group/tile) */
+[data-cds="MessageAttachments"] [data-testid="file-thumbnail"][class*="group/tile"] {
   width: var(--cus-attachment-size) !important;
   height: var(--cus-attachment-size) !important;
+  min-width: var(--cus-attachment-size) !important;
+}
+
+/* 貼り付けたテキスト等、button要素にインラインstyleでサイズ指定されるケース */
+[data-cds="MessageAttachments"] [data-testid="file-thumbnail"] > button {
+  width: var(--cus-attachment-size) !important;
+  height: var(--cus-attachment-size) !important;
+  min-width: var(--cus-attachment-size) !important;
 }
 
 /* ===== Phase 3: 入力欄自動拡張の抑制 ===== */

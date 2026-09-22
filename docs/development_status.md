@@ -31,3 +31,7 @@ Phase 7: 最終確認・push(完了・全フェーズ完了)
 - README.mdのスクリーンショット枠に実際の画像を追加
 - pushしたリポジトリのSettings → Actions → General → Workflow permissionsを
   「Read and write permissions」に設定(build.ymlのRelease作成に必要)
+
+## 追加修正(Phase2拡張)
+- 貼り付けたテキスト(圧縮テキストファイル)は button 要素にインラインstyleでサイズ指定されており、group/tileクラスを持たないため縮小対象外だった問題を修正
+- content.cssのセレクタを拡張し、画像/通常ファイル(group/tile)と貼り付けテキスト(button直下)の両方を --cus-attachment-size で制御できるように対応(動作確認予定)
