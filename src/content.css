@@ -11,7 +11,8 @@
 }
 
 /* 貼り付けたテキスト等、button要素にインラインstyleでサイズ指定されるケース */
-[data-cds="MessageAttachments"] [data-testid="file-thumbnail"] > button {
+/* :first-of-type で本体のサムネイルbuttonのみを対象にし、削除ボタン(2つ目のbutton)を除外 */
+[data-cds="MessageAttachments"] [data-testid="file-thumbnail"] > button:first-of-type {
   width: var(--cus-attachment-size) !important;
   height: var(--cus-attachment-size) !important;
   min-width: var(--cus-attachment-size) !important;
