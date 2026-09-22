@@ -1,6 +1,7 @@
 const DEFAULTS = {
   attachmentSize: 120,
   inputMaxHeight: 200,
+  scrollFixEnabled: true,
 };
 
 function clamp(value, min, max) {
@@ -39,13 +40,28 @@ const inputHeightControl = setupControl(
   "inputMaxHeight", "inputMaxHeightNumber", "inputMaxHeight", 80, 458
 );
 
+const scrollFixToggle = document.getElementById("scrollFixToggle");
+
+function applyScrollFixToggle(value, { save = true } = {}) {
+  scrollFixToggle.checked = value;
+  if (save) {
+    chrome.storage.local.set({ scrollFixEnabled: value });
+  }
+}
+
+scrollFixToggle.addEventListener("change", () => {
+  applyScrollFixToggle(scrollFixToggle.checked);
+});
+
 // ポップアップを開いたタイミングで、保存済みの値をUIに反映(このときは保存し直さない)
 chrome.storage.local.get(DEFAULTS, (values) => {
   attachmentControl.apply(values.attachmentSize, { save: false });
   inputHeightControl.apply(values.inputMaxHeight, { save: false });
+  applyScrollFixToggle(values.scrollFixEnabled, { save: false });
 });
 
 document.getElementById("resetBtn").addEventListener("click", () => {
   attachmentControl.apply(DEFAULTS.attachmentSize);
   inputHeightControl.apply(DEFAULTS.inputMaxHeight);
+  applyScrollFixToggle(DEFAULTS.scrollFixEnabled);
 });
